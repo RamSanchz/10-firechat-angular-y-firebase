@@ -1,17 +1,19 @@
-<div class="row">
-  <div class="col-4">
-    <h1>Chat</h1>
-    <span
-      class="badge text-sm"
-      [ngClass]="{
-        'bg-danger': sesion == 'google',
-        'bg-info': sesion == 'twitter',
-        'bg-primary': sesion == 'facebook'
-      }"
-      >{{ sesion }}</span
-    >
-  </div>
-</div>
+<h1>
+  Chat
+  <small>
+    <small>
+      <span
+        class="badge text-sm"
+        [ngClass]="{
+          'bg-danger': sesion == 'google',
+          'bg-info': sesion == 'twitter',
+          'bg-primary': sesion == 'facebook'
+        }"
+        >{{ sesion }}</span
+      ></small
+    ></small
+  >
+</h1>
 
 <hr />
 
