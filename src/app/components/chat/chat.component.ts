@@ -13,6 +13,7 @@ export class ChatComponent implements OnInit {
   mensaje: string = '';
   elemento: any;
   public usuario: string;
+  public sesion: string;
 
   constructor(public _cs: ChatService) {
     this._cs.cargarMensajes().subscribe(() => {
@@ -23,6 +24,8 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.sesion = this._cs.sesion;
+
     this.elemento = document.getElementById('app-mensajes');
   }
 

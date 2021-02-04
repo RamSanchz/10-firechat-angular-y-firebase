@@ -18,6 +18,7 @@ export class ChatService {
   public chats: Mensaje[] = [];
 
   public usuario: any = {};
+  public sesion: string;
 
   constructor(private afs: AngularFirestore, public auth: AngularFireAuth) {
     /* obtenemos la informacion de usuario que se autentico */
@@ -31,6 +32,8 @@ export class ChatService {
   }
 
   login(proveedor: string) {
+    this.sesion = proveedor;
+
     switch (proveedor) {
       case 'google':
         this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
